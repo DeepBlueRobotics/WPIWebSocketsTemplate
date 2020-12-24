@@ -2,7 +2,7 @@
 {% set hasId = schema.properties() | contains("<init") -%}
 {% set cstatic = " " if hasId else " static " -%}
 {% set cthis = "this" if hasId else name + "Sim" -%}
-{% set qz = '"0"' | safe -%}
+{% set qz = '""' | safe -%}
 {% set cid = "id" if hasId else qz -%}
 {% if hasId -%}
 {% set props = schema.properties() | filterProps -%}
@@ -152,7 +152,7 @@ public class {{ name }}Sim {
     {% endfor -%}
 
     public static void processMessage(String device, List<WSValue> data) {
-        {%- if hasId -%}
+        {%- if hasId %}
         {{ name }}Sim simDevice = new {{ name }}Sim(device);
         for(WSValue value: data) {
             simDevice.processValue(value);
