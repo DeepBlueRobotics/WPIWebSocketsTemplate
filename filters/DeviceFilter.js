@@ -8,7 +8,9 @@ function contains(props, propname) {
 }
 
 function filterProps(props) {
-    delete props["<init"];
+    if(contains(props, "<init")) {
+        delete props["<init"];
+    }
     return props;
 }
 
