@@ -1,7 +1,3 @@
-{% import "../partials/components/" + schemaName + "Setup.java" as config %}
-{% set name = config.name %}
-{% set type = config.type %}
-{% set hasId = config.hasId %}
 {% set hasInit = schema.properties() | contains("<init") -%}
 {% set cstatic = " " if hasId else " static " -%}
 {% set cthis = "this" if hasId else name + "Sim" -%}
