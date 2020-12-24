@@ -1,5 +1,2 @@
-{% set name = "Relay"-%}
-{% set type = "Relay"-%}
-{% set hasId = true-%}
-{% set schema = asyncapi.components().schema("relayData")-%}
-{%- include "../partials/template.java" -%}
+{%- from "../partials/template.java" import template -%}
+{{- template("Relay", "Relay", true, asyncapi.components().schema("relayData")) -}}

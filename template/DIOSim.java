@@ -1,5 +1,2 @@
-{% set name = "DIO"-%}
-{% set type = "DIO"-%}
-{% set hasId = true-%}
-{% set schema = asyncapi.components().schema("dioData")-%}
-{%- include "../partials/template.java" -%}
+{%- from "../partials/template.java" import template -%}
+{{- template("DIO", "DIO", true, asyncapi.components().schema("dioData")) -}}

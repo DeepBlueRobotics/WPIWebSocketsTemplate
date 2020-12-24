@@ -1,5 +1,2 @@
-{% set name = "Encoder"-%}
-{% set type = "Encoder"-%}
-{% set hasId = true-%}
-{% set schema = asyncapi.components().schema("encoderData")-%}
-{%- include "../partials/template.java" -%}
+{%- from "../partials/template.java" import template -%}
+{{- template("Encoder", "Encoder", true, asyncapi.components().schema("encoderData")) -}}

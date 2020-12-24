@@ -1,5 +1,2 @@
-{% set name = "DriverStation"-%}
-{% set type = "DriverStation"-%}
-{% set hasId = false-%}
-{% set schema = asyncapi.components().schema("driverstationData")-%}
-{%- include "../partials/template.java" -%}
+{%- from "../partials/template.java" import template -%}
+{{- template("DriverStation", "DriverStation", false, asyncapi.components().schema("driverstationData")) -}}

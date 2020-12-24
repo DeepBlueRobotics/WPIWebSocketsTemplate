@@ -1,5 +1,2 @@
-{% set name = "RoboRIO"-%}
-{% set type = "RoboRIO"-%}
-{% set hasId = false-%}
-{% set schema = asyncapi.components().schema("roborioData")-%}
-{%- include "../partials/template.java" -%}
+{%- from "../partials/template.java" import template -%}
+{{- template("RoboRIO", "RoboRIO", false, asyncapi.components().schema("roborioData")) -}}

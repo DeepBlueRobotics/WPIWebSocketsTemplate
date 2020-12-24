@@ -1,5 +1,2 @@
-{% set name = "PWM"-%}
-{% set type = "PWM"-%}
-{% set hasId = true-%}
-{% set schema = asyncapi.components().schema("pwmData")-%}
-{%- include "../partials/template.java" -%}
+{%- from "../partials/template.java" import template -%}
+{{- template("PWM", "PWM", true, asyncapi.components().schema("pwmData")) -}}

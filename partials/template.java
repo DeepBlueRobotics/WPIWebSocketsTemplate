@@ -1,3 +1,4 @@
+{% macro template(name, type, hasId, schema) -%}
 {% set hasInit = schema.properties() | contains("<init") -%}
 {% set cstatic = " " if hasId else " static " -%}
 {% set cthis = "this" if hasId else name + "Sim" -%}
@@ -212,3 +213,4 @@ public class {{ name }}Sim {
     }
 
 }
+{% endmacro %}

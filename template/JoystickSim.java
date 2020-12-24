@@ -1,5 +1,2 @@
-{% set name = "Joystick"-%}
-{% set type = "Joystick"-%}
-{% set hasId = true-%}
-{% set schema = asyncapi.components().schema("joystickData")-%}
-{%- include "../partials/template.java" -%}
+{%- from "../partials/template.java" import template -%}
+{{- template("Joystick", "Joystick", true, asyncapi.components().schema("joystickData")) -}}

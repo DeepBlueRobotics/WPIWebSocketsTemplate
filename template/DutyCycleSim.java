@@ -1,5 +1,2 @@
-{% set name = "DutyCycle"-%}
-{% set type = "DutyCycle"-%}
-{% set hasId = true-%}
-{% set schema = asyncapi.components().schema("dutycycleData")-%}
-{%- include "../partials/template.java" -%}
+{%- from "../partials/template.java" import template -%}
+{{- template("DutyCycle", "DutyCycle", true, asyncapi.components().schema("dutycycleData")) -}}
