@@ -70,9 +70,6 @@ components:
     accelData:
       type: object
       description: "Accelerometer Data (type: Accel, device: channel number)"
-      x-name: Accelerometer
-      x-type: Accel
-      x-hasid: true
       properties:
         <init:
           type: boolean
@@ -93,9 +90,6 @@ components:
     aiData:
       type: object
       description: "Analog Input Data (type: AI, device: channel number)"
-      x-name: AnalogInput
-      x-type: AI
-      x-hasid: true
       properties:
         <init:
           type: boolean
@@ -107,9 +101,6 @@ components:
     dioData:
       type: object
       description: "Digital Input/Output Data (type: DIO, device: channel number)"
-      x-name: DIO
-      x-type: DIO
-      x-hasid: true
       properties:
         <init:
           type: boolean
@@ -124,9 +115,6 @@ components:
     dpwmData:
       type: object
       description: "Duty Cycle Output Data (type: dPWM, device: channel number)"
-      x-name: dPWM
-      x-type: dPWM
-      x-hasid: true
       properties:
         <init:
           type: boolean
@@ -143,9 +131,6 @@ components:
     driverstationData:
       type: object
       description: "Driver Station Data (type: DriverStation)"
-      x-name: DriverStation
-      x-type: DriverStation
-      x-hasid: false
       properties:
         ">new_data":
           type: boolean
@@ -181,9 +166,6 @@ components:
     dutycycleData:
       type: object
       description: "Duty Cycle Input Data (type: DutyCycle, device: channel number)"
-      x-name: DutyCycle
-      x-type: DutyCycle
-      x-hasid: true
       properties:
         ">connected":
           type: boolean
@@ -195,9 +177,6 @@ components:
     encoderData:
       type: object
       description: "Quadrature Encoder Data (type: Encoder, device: channel number)"
-      x-name: Encoder
-      x-type: Encoder
-      x-hasid: true
       properties:
         <init:
           type: boolean
@@ -221,9 +200,6 @@ components:
     gyroData:
       type: object
       description: "Gyro Data (type: Gyro, device: channel number)"
-      x-name: Gyro
-      x-type: Gyro
-      x-hasid: true
       properties:
         <init:
           type: boolean
@@ -256,9 +232,6 @@ components:
     joystickData:
       type: object
       description: "Joystick Data (type: Joystick, device: channel number)"
-      x-name: Joystick
-      x-type: Joystick
-      x-hasid: true
       properties:
         ">axes":
           type: array
@@ -293,9 +266,6 @@ components:
     pwmData:
       type: object
       description: "PWM Output Data (type: PWM, device: channel number)"
-      x-name: PWM
-      x-type: PWM
-      x-hasid: true
       properties:
         <init:
           type: boolean
@@ -314,9 +284,6 @@ components:
     relayData:
       type: object
       description: "Relay Output Data (type: Relay, device: channel number)"
-      x-name: Relay
-      x-type: Relay
-      x-hasid: true
       properties:
         <init_fwd:
           type: boolean
@@ -334,9 +301,6 @@ components:
     roborioData:
       type: object
       description: "RoboRIO Data (type: RoboRIO)"
-      x-name: RoboRIO
-      x-type: RoboRIO
-      x-hasid: false
       properties:
         ">fpga_button":
           type: boolean
