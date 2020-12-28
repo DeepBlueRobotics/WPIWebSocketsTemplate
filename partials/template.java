@@ -247,7 +247,7 @@ public class {{ name }}Sim {
             if (value.getKey().equals("<init"))
                 init = value;
             else
-            simDevice.processValue(value);
+                simDevice.processValue(value);
         }
         if (init != null)
             simDevice.processValue(init);
@@ -256,7 +256,7 @@ public class {{ name }}Sim {
             if (value.getKey().equals("<init"))
                 init = value;
             else
-            processValue(value);
+                processValue(value);
         }
         if (init != null)
             processValue(init);
@@ -290,6 +290,9 @@ public class {{ name }}Sim {
                     break;
                 }
                 {%- endfor %}
+                default: {
+                    System.err.println("{{ name }}Sim ignored unrecognized WSValue: " + value.getKey() + ":" + value.getValue());
+                }
             }
         }
     }
