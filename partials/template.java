@@ -236,15 +236,30 @@ public class {{ name }}Sim {
      * @param data the data associated with the message
      */
     public static void processMessage(String device, List<WSValue> data) {
+        // Process all of the values, but save the "<init" value for last
+        // so that the rest of the state has been set when the initialize
+        // callback is called.
+        WSValue init = null;
         {%- if hasId %}
         {{ name }}Sim simDevice = new {{ name }}Sim(device);
+
         for(WSValue value: data) {
+            if (value.getKey().equals("<init"))
+                init = value;
+            else
             simDevice.processValue(value);
         }
+        if (init != null)
+            simDevice.processValue(init);
         {%- else %}
         for(WSValue value: data) {
+            if (value.getKey().equals("<init"))
+                init = value;
+            else
             processValue(value);
         }
+        if (init != null)
+            processValue(init);
         {%- endif %}
     }
 
